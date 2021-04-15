@@ -543,6 +543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startButton: {fileID: 99544374}
   quitbutton: {fileID: 996596478}
+  replaybutton: {fileID: 0}
   BackToMenubutton: {fileID: 2087513632}
   returnToGamebutton: {fileID: 0}
   returnToMenubutton: {fileID: 0}
@@ -1577,7 +1578,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1220, y: 980}
+  m_SizeDelta: {x: 1640, y: 980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1546135825
 MonoBehaviour:
