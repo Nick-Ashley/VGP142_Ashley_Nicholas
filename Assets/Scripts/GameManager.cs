@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 using UnityEngine.UI;
+using System;
 
 
 
@@ -42,30 +43,37 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-
+        try
         {
-            if (SceneManager.GetActiveScene().name == "MainLevel")
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+
             {
-                SceneManager.LoadScene("TitleScreen");
+                if (SceneManager.GetActiveScene().name == "MainLevel")
+                {
+                    SceneManager.LoadScene("TitleScreen");
+
+                }
+                else if (SceneManager.GetActiveScene().name == "TitleScreen")
+                {
+
+                    SceneManager.LoadScene("MainLevel");
+
+                }
+                else if (SceneManager.GetActiveScene().name == "GameOver")
+                {
+                    SceneManager.LoadScene("TitleScreen");
+                }
 
             }
-            else if (SceneManager.GetActiveScene().name == "TitleScreen")
+            if (Input.GetKeyDown(KeyCode.Backspace))
             {
-
-                SceneManager.LoadScene("MainLevel");
-
+                QuitGame();
             }
-            else if (SceneManager.GetActiveScene().name == "GameOver")
-            {
-                SceneManager.LoadScene("TitleScreen");
-            }
-
         }
-        if (Input.GetKeyDown(KeyCode.Backspace))
+        catch (NullReferenceException e)
         {
-            QuitGame();
+            Debug.LogWarning(e.Message);
         }
     }
 

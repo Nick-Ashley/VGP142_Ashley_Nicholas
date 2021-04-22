@@ -225,7 +225,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private void OnTriggerStay(Collider collision)
         {
-			Debug.Log("Stayed");
+			//Debug.Log("Stayed");
 
 			if (collision.gameObject.tag == "CAR" && Input.GetKey(KeyCode.F))
             {
